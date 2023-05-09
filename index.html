@@ -37,7 +37,7 @@
             const name = document.getElementById('name').value;
             const response = await fetch(apiUrl);
             if (!response.ok) {
-                document.getElementById('result').textContent = 'エラーが発生しました。もう一度お試しください。';
+                document.getElementById('result').textContent = 'エラーが発生しました。もう一度お試しください。解決しない場合は、受付または会場スタッフにお声がけください。席次表を紙面でお渡しいたします。';
                 return;
             }
             const data = await response.json();
@@ -48,7 +48,7 @@
                 const tableLocation = guest[2];
                 document.getElementById('result').innerHTML = `<p>あなたのテーブルナンバーは「${tableNumber}」</p>です<img src="${tableLocation}" alt="テーブル位置図">`;
             } else {
-                document.getElementById('result').textContent = 'お名前が見つかりませんでした。もう一度お試しください。';
+                document.getElementById('result').textContent = 'お名前が見つかりませんでした。もう一度お試しください。解決しない場合は、受付または会場スタッフにお声がけください。席次表を紙面でお渡しいたします。';
             }
         });
     </script>
